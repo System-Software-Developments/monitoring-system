@@ -1,0 +1,16 @@
+---
+name: grafana
+namespace: monitoring-system
+
+grafana_image: grafana/grafana:4.6.3
+
+profiles:
+  dev:
+    name: {{ branch.replace('/', '-') }}
+  staging:
+    name: next
+  stable: { }
+
+branches:
+  master: stable
+  dev/*:  dev
