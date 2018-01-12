@@ -23,6 +23,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: {{ build.name }}-core
+  namespace: {{ service.namespace }}
 spec:
   replicas: 1
   template:
@@ -43,7 +44,6 @@ spec:
             cpu: 100m
             memory: 100Mi
         env:
-          # The following env variables set up basic auth with the default admin user and admin password.
           - name: GF_AUTH_BASIC_ENABLED
             value: "true"
           - name: GF_AUTH_ANONYMOUS_ENABLED
