@@ -1,5 +1,5 @@
 ---
-name: prometheus
+name: prometheus-operator
 namespace: monitoring-system
 
 profiles:
