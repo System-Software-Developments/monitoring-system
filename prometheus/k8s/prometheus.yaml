@@ -11,7 +11,7 @@ metadata:
   name: {{ build.name }}
   namespace: {{ service.namespace }}
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   ports:
     - name: web
       port: 9090
@@ -25,6 +25,8 @@ kind: Prometheus
 metadata:
   name: {{ build.name }}
   namespace: {{ service.namespace }}
+  labels:
+    prometheus: {{ build.name }}
 spec:
   serviceAccountName: {{ build.name }}
   serviceMonitorSelector:
