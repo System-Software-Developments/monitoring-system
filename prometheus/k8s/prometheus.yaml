@@ -78,6 +78,9 @@ metadata:
   namespace: {{ service.namespace }}
 spec:
   serviceAccountName: {{ build.name }}
+  serviceMonitorSelector:
+    matchLabels:
+      ambassador: monitoring
   resources:
     requests:
       memory: 400Mi
