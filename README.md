@@ -28,3 +28,5 @@ for i in "${COMPONENT_DIRS[@]}" ; do
    fi
 done
 ```
+
+Alternatively run `./deploy.sh`
