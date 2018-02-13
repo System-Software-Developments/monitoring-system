@@ -8,7 +8,7 @@ metadata:
   namespace: {{ service.namespace }}
 spec:
   selector:
-    service: ambassador
+    service: ambassador-{{ build.profile.name }}
   type: ClusterIP
   clusterIP: None
   ports:
