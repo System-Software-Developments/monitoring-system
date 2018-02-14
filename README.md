@@ -9,6 +9,16 @@ Ensure you..
 1. Have *at least* [Forge](https://forge.sh) v0.3.23 installed.
 2. Access to a Kubernetes cluster.
 
+# Explanation
+
+This repo contains:
+
+* A configuration of Grafana
+* A configuration of the Prometheus Operator
+* The configuration necessary to configure a Prometheus object & ServiceMonitor to monitor Argonath
+
+The Argonath Prometheus object and Service Monitor need to be deployed in the `argonath` namespace, and they need to be deployed *after* the CRD is created. The correct ordering is below.
+
 # Deployment
 
 **WARNING**
@@ -19,7 +29,7 @@ In order to deploy do the following:
 
 ```bash
 kubectl create ns monitoring-system
-COMPONENT_DIRS=( "./grafana" "./prometheus-operator" "./prometheus" )
+COMPONENT_DIRS=( "./grafana" "./prometheus-operator" "./prom-argonath" "./argonath" )
 for i in "${COMPONENT_DIRS[@]}" ; do
    if [ -d "$i" ]; then
      pushd "$i"

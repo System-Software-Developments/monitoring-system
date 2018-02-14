@@ -1,6 +1,6 @@
 ---
 name: prometheus
-namespace: monitoring-system
+namespace: argonath
 
 profiles:
   dev:
