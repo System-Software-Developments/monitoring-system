@@ -40,3 +40,9 @@ done
 ```
 
 Alternatively run `./deploy.sh`
+
+## Grafana
+
+1. Run the `deploy.sh` script.
+2. In Grafana, configure the data source to point to http://prometheus-stable.argonath.svc.cluster.local:9090
+3. Import the dashboard from https://grafana.com/dashboards/4698
